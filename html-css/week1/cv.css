@@ -1,0 +1,81 @@
+/* Global*/
+*{
+    
+    padding: 0;
+    margin: 0;
+}
+body{
+    color:black;
+    font-family: "Times New Roman", Times, serif;
+    background-color:rgb(107, 107, 107);
+    
+    background-image: url("pexels-pixabay-247791.jpg");
+    background-attachment: fixed;
+      
+}
+/*header section*/
+.about-me{
+    width: 65%;
+    text-align: left;
+    margin-left: 1em;
+}
+.contact{
+   padding: 1em;
+    width: fit-content;
+    justify-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+/*.picture{
+    
+    border: solid 2px;
+    border-color: blue;
+    justify-items: end;
+}*/
+img{
+    
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    
+}
+
+/*container*/
+.container{
+    display: flex;
+    flex-direction: column;
+}
+/* border of main sections*/
+.section-border{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em;
+    background-color: darkgray;
+}
+/*main three sections*/
+.header,.education-job, .strategies-resources{
+    display: flex;   
+    width: 100%; 
+    margin: 1em;
+    background-color:whitesmoke;
+    
+}
+/* subsections discreption about topic*/
+.detail{
+    width: 50%;
+    padding: 1em;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    padding: 1%;
+
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    background-color: yellow;
+}
