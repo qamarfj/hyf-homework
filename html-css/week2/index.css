@@ -68,8 +68,8 @@ li{
     line-height: 2em;
     
     }
-.footer a{
-    padding: 1em;
+.footer a,li{
+    /*padding: 1em;*/
     color: #fafafa;
     }
 a{
@@ -89,7 +89,7 @@ body{
 text-align: center;
 
 }
-    h1, h2,h3,p{
+h1, h2,h3,p{
     font-size: 0.9em;
 }
 /*flex container*/
@@ -112,6 +112,13 @@ text-align: center;
     margin-top: 2em;    
 }
 }
+.large-image{
+width: 098;
+}
+#img-larg{
+    display: block;
+    width: 100%;
+}
 
 /* medium sized screens*/
 @media screen and (min-width: 769px) and (max-width: 1034px){
@@ -131,11 +138,13 @@ text-align: center;
     }
     /*main section*/
     .sub-section-left{
-        width: 32%;
+        /*width: 32%;*/
+        flex: 1;
         padding: 2em;
     }
     .sub-section-right{
-        width: 45%;
+       /* width: 45%;*/
+       flex: 2;
         padding: 2em;
     }    
     /*logo */
