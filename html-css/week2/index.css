@@ -89,6 +89,9 @@ body{
 text-align: center;
 
 }
+    h1, h2,h3,p{
+    font-size: 0.9em;
+}
 /*flex container*/
 .practical-web-development{
     order: -1;
