@@ -80,6 +80,13 @@ a{
 .header p,.main-section p{
     color: darkgray;
 }
+.large-image{
+    flex: 98%;
+    display: flex;
+    }
+    #img-larg{
+        width: 100%;
+    }
 
 /* small sized screens*/
 @media only screen and (max-width: 768px){
@@ -112,13 +119,7 @@ h1, h2,h3,p{
     margin-top: 2em;    
 }
 }
-.large-image{
-width: 098;
-}
-#img-larg{
-    display: block;
-    width: 100%;
-}
+
 
 /* medium sized screens*/
 @media screen and (min-width: 769px) and (max-width: 1034px){
