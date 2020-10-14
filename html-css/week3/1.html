@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign up</title>
+</head>
+
+<body>
+    <!--main flex container-->
+    <div class="container">
+
+        <header class="header">
+            <div class="logo">Logo</div>
+            <div class="navigation">Navigation</div>
+        </header>
+
+        <!--start of main section-->
+        <div class="main-section">
+
+            <!-- start of offer description and progress-->
+            <div class="offer-description">
+                <h1>Sign up to yourcustomtailor.com</h1>
+                <p>
+                    We can’t wait to help you improve your life-style and gain the attention from people around
+                    you!</p>
+                <p>
+                    Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy
+                    picking the best offers that match your preferences and style. Every week we will send you a
+                    hand-picked selection - we just need to know a few details about your first…
+                </p>
+
+                <h2>Step 1/4 - tell us who you are?</h2>
+                <h3>Progress</h3>
+                <div class="progress-container">
+                    <div class="progress-page1"></div>
+                </div>
+                <p>Nice to meet you. Let’s spend a minute to get to know each other? Please enter the following:</p>
+
+                <!--end of offer description and progress-->
+            </div>
+            <!--form section-->
+            <form>
+                <!--start of Form section billing-->
+                <fieldset>
+                    <div>
+                        <label for="user-first-name">First name* </label>
+
+                        <input type="text" name="user-first-name" id="user-first-name" autofocus required>
+                        <label for="user-last-name">Last name*</label>
+                        <input type="text" id="user-last-name" name="user-last-name" required>
+                    </div>
+                    <div>
+                        <label for="Country">Country*</label>
+                        <select name="country" id="country" required>
+                            <option value="denmark">Denmark</option>
+                            <option value="usa">USA</option>
+                            <option value="sweden">Sweden</option>
+                            <option value="norway">Norway</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="street-address">Street address*</label>
+                        <input type="text" id="street-address" name="street-address*" required>
+                        <label for="post-code">Post code*</label>
+                        <input type="text" id="post-code" name="post-code" required>
+                    </div>
+
+
+                </fieldset>
+
+                <!--start of shipping address cehck-->
+
+                <h5>Use the same address for billing and shipping? Uncheck below to
+                    fill out a separate shipping
+                    address.</h5>
+                <label for="shipping-address-check">Shipping address</label>
+                <input type="checkbox" id="shipping-address-check" name="shipping-address-check" checked>
+
+                <!--end of shipping address cehck-->
+                <!--shipping address-->
+                <div class="hidden">
+                    <h1>Shipping address</h1>
+                    <fieldset>
+
+                        <div>
+                            <label for="user-first-name">First name*</label>
+
+                            <input type="text" name="user-first-name" id="user-first-name" required>
+                            <label for="user-last-name">Last name*</label>
+                            <input type="text" id="user-last-name" name="user-last-name" required>
+                        </div>
+                        <div>
+                            <label for="Country">Country*</label>
+                            <select name="country" id="country" required>
+                                <option value="denmark">Denmark</option>
+                                <option value="usa">USA</option>
+                                <option value="sweden">Sweden</option>
+                                <option value="norway">Norway</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="street-address">Street address*</label>
+                            <input type="text" id="street-address" name="street-address*" required>
+                            <label for="post-code">Post code*</label>
+                            <input type="text" id="post-code" name="post-code" maxlength="4" required>
+                        </div>
+
+                        <!--end of form section shipping-->
+                    </fieldset>
+
+                    <!--end of hidden section-->
+                </div>
+                <!--start of profile description -->
+                <div class="description">
+                    <label for="profile-description">Profile description <p>Please provide a short description of
+                            yourself to be displayed on our social community pages.</p></label>
+                    <textarea name="profile-description" id="profile-description" rows="5" maxlength="500"></textarea>
+                    <!--end of profile description -->
+                </div>
+                <div class="button"> <button type="submit" id="button">validate</button> <span></span><a href="2.html">
+                        <button type="button" id="button">Next Step</button></a>
+                </div>
+                <!--end form section-->
+            </form>
+            <!--end of main section-->
+        </div>
+        <!--end of main container-->
+    </div>
+</body>
+
+</html>

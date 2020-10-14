@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>contect information</title>
+</head>
+
+<body>
+    <!--main flex container-->
+    <div class="container">
+        <header class="header">
+            <div class="logo">Logo</div>
+            <div class="navigation">Navigation</div>
+        </header>
+        <!--start of main section-->
+        <div class="main-section">
+            <!--start of offer description and progress-->
+            <div class="offer-description">
+                <h1>Sign up to yourcustomtailor.com</h1>
+
+                <h2>Step 2/4 - how can we reach you?</h2>
+                <h3>Progress</h3>
+                <!--Progress bar-->
+                <div class="progress-container">
+                    <div class="progress-page2"></div>
+                </div>
+            </div>
+            <p>We will probably need to stay in touch somehow. Let is know how we can reach you?</p>
+
+            <!--end of offer description and progress-->
+        </div>
+        <!--form section-->
+        <form action="3.html" method="POST">
+            <!--start of contect information section -->
+            <fieldset class="emil-pwd">
+                <label for="user-email">Email*</label>
+                <input type="email" name="user-email" id="user-email" autofocus required>
+                <label for="user-phone">Phone</label>
+                <input type="tel" id="user-phone" pattern="[0-9]*" name="user-phone">
+                <label for="password">Password*</label>
+                <input type="password" id="password" name="password" minlength="10" pattern="[A-Z]*[a-z]*" required>
+
+                <label for="repeat-password">Re-enter Password*</label>
+                <input type="password" id="repeat-password" name="repeat-password" minlength="10" pattern="[A-Z]*[a-z]*"
+                    required>
+
+            </fieldset>
+            <!--start of newsletter-->
+
+            <p>I want to sign up for the newsletter</p>
+            <fieldset class="news">
+                <div> <label for="weekly-news" class="weekly-news">Weekly news</label>
+                    <input type="radio" id="weekly-news" class="weekly-news" name="news" required></div>
+                <div>
+                    <label for="monthly-news" class="monthly-news">Monthly news</label>
+                    <input type="radio" id="monthly-news" class="monthly-news" name="news">
+                </div>
+                <div>
+                    <label for="no-news" class="no-news">Don't send me news</label>
+                    <input type="radio" id="no-news" class="no-news" name="news"></div>
+            </fieldset>
+
+
+            <div class="button"> <button type="submit" id="button">validate</button> <span></span><a href="3.html">
+                    <button type="button" id="button">Next Step</button></a>
+            </div>
+            <!--end form section-->
+        </form>
+        <!--end of main section-->
+    </div>
+    <!--end of main container-->
+    </div>
+</body>
+
+</html>

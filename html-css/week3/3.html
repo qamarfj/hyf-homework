@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Customer Interest</title>
+</head>
+
+<body>
+    <!--main flex container-->
+    <div class="container">
+        <header class="header">
+            <div class="logo">Logo</div>
+            <div class="navigation">Navigation</div>
+
+
+        </header>
+        <!--start of main section-->
+        <div class="main-section">
+            <!--offer description and progress-->
+            <div class="offer-description">
+                <h1>Sign up to yourcustomtailor.com</h1>
+
+                <h2>Step 3/4 - Time to learn about your preferences?</h2>
+                <h3>Progress</h3>
+                <!--Progress bar-->
+                <div class="progress-container">
+                    <div class="progress-page3"></div>
+                </div>
+                <p>What kind of items are you interested in offers on?</p>
+
+                <!--end of offer description and progress-->
+            </div>
+            <!--form section-->
+            <form action="4.html" method="POST">
+                <!--start of interestimg items-->
+                <fieldset class="interesting-items">
+
+                    <label for="apparal">Apparal
+                        <input type="checkbox" id="apparal" name="apparal" value="apparal" checked>
+                    </label>
+                    <label for="accessories">Accessories
+                        <input type="checkbox" id="accessories" name="accessories" value="accessories">
+                    </label>
+                    <label for="handbags">Handbags
+                        <input type="checkbox" id="handbags" name="handbags" value="handbags" checked>
+                    </label>
+                    <label for="jewelry">Jewelry
+                        <input type="checkbox" id="jewelry" name="jewelry" value="jewelry">
+                    </label>
+                    <label for="shoes">Shoes
+                        <input type="checkbox" id="shoes" name="shoes" value="shoes"></label>
+
+
+                </fieldset>
+
+                <!--start of style selection-->
+
+                <p>Choose the images that best resemble your style</p>
+                <fieldset class="image-style">
+
+                    <label for="style1" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style1" name="style1" checked></label>
+
+                    <label for="style2" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style2" name="style2"></label>
+
+                    <label for="style3" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style3" name="style3" checked>
+                    </label>
+
+                    <label for="style4" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style4" name="style4"></label>
+
+                    <label for="style5" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style5" name="style5">
+                    </label>
+
+                    <label for="style6" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style6" name="style6">
+                    </label>
+
+                    <label for="style7" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style7" name="style7" checked></label>
+
+                    <label for="style8" class="style"><img src="image.jpg" alt="image style">Select<input
+                            type="checkbox" id="style8" name="style8" checked></label>
+
+                </fieldset>
+
+                <div class="button"> <button type="submit" id="button">validate</button> <span></span><a href="4.html">
+                        <button type="button" id="button">Next Step</button></a>
+                </div>
+                <!--end form section-->
+            </form>
+            <!--end of main section-->
+        </div>
+        <!--end of main container-->
+    </div>
+</body>
+
+</html>

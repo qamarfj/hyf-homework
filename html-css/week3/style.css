@@ -1,0 +1,216 @@
+/*global*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+/*container*/
+.container{
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*header section*/
+.header{
+display: flex;
+height: 5em;
+justify-content: space-between;
+}
+.logo{
+    width: 20%;
+background-color: lightgray;
+padding-top: 2em;
+text-align: center;
+}
+
+.navigation{
+    background-color: lightgray;
+    border: solid 1px;
+    width: 35%;
+    padding-top: 2em;
+text-align: center;   
+}
+/*main*/
+
+fieldset{
+    
+    border: none;
+  }
+
+label,input{
+    font-weight: bold;
+    padding: 1em;
+    margin: 1em;
+}
+label p{
+    font-weight: normal;
+    font-style: italic;
+}
+.main-section{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+/*progress bar start*/
+.progress-container{
+    flex: 100%;
+    border: 1px solid;
+    
+}
+.progress-page1{
+    height: 3em;
+    background-color:gray;
+    width: 2%;
+    animation: progress1 10s;
+}
+.progress-page2{
+    height: 3em;
+    background-color:gray;
+    width: 30%;
+    animation: progress2 10s;
+}
+.progress-page3{
+    height: 3em;
+    background-color:gray;
+    width: 60%;
+    animation: progress3 10s;
+}
+.progress-page4{
+    height: 3em;
+    border-right: solid 1px;
+    background-color:lightgray;
+    width: 90%;
+    animation: progress4 10s;
+}
+
+@keyframes progress1 {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 2%;;
+    }
+  }
+  @keyframes progress2 {
+    0% {
+      width: 2%;
+    }
+    100% {
+      width: 30%;;
+    }
+  }
+  @keyframes progress3 {
+    0% {
+      width: 30%;
+    }
+    100% {
+      width: 60%;;
+    }
+  }
+  @keyframes progress4 {
+    0% {
+      width: 60%;
+    }
+    100% {
+      width: 90%;;
+    }
+  }
+  /*progress bar end*/
+.description{
+    display: flex;
+    padding: 2em;
+    flex-wrap: wrap;
+}
+
+#shipping-address-check:checked ~ .hidden{
+    display: none;
+    position: absolute;}
+
+
+.interesting-items{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px;
+    width: 40%;
+    text-align: center;
+    }
+
+input[type=checkbox]{
+    width: 30px;
+    height: 30px;
+}
+.button{ 
+
+text-align: end;
+    
+}
+
+.payment label{
+    width: 6em;
+}
+.news{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.payment input, select{
+    height: 3em;
+    width: 15em;
+}
+form div{
+    padding: 2em;
+}
+h1,h2,h3,p{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#button{
+    height: 4em;
+    width: 10em;
+}
+/*small screen*/
+@media screen and (max-width: 800px){
+    .container{
+        font-size: 0.9em;        
+        
+    }
+    h1{
+        font-size: 0.8em;
+    }
+    .image-style{
+        display: flex;
+               flex-wrap: wrap;
+    }
+    .style{
+        flex: 242px;
+    }
+    .emil-pwd,.news{
+    display: flex;
+    flex-direction: column;
+}
+.description{
+    flex-direction: column;
+}
+}
+/*big screen*/
+
+
+@media screen and (min-width: 801px){
+    .emil-pwd,.news{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; }
+ .image-style{display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 242px);
+                        
+        }
+        .description label{
+            flex: 20%;
+        padding: 2em;
+        }
+        .description textarea{
+            flex: 70%;
+            padding: 2em;
+        }
+}
