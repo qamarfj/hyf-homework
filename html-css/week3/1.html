@@ -42,7 +42,7 @@
                 <!--end of offer description and progress-->
             </div>
             <!--form section-->
-            <form>
+            <form action="#" method="POST">
                 <!--start of Form section billing-->
                 <fieldset>
                     <div>
@@ -53,8 +53,10 @@
                         <input type="text" id="user-last-name" name="user-last-name" required>
                     </div>
                     <div>
-                        <label for="Country">Country*</label>
+                        <label for="country">Country*</label>
+
                         <select name="country" id="country" required>
+                            <option value="">Choose</option>
                             <option value="denmark">Denmark</option>
                             <option value="usa">USA</option>
                             <option value="sweden">Sweden</option>
@@ -65,7 +67,7 @@
                         <label for="street-address">Street address*</label>
                         <input type="text" id="street-address" name="street-address*" required>
                         <label for="post-code">Post code*</label>
-                        <input type="text" id="post-code" name="post-code" required>
+                        <input type="text" id="post-code" name="post-code" pattern="[0-9]{4}" required>
                     </div>
 
 
@@ -86,15 +88,16 @@
                     <fieldset>
 
                         <div>
-                            <label for="user-first-name">First name*</label>
+                            <label for="shipping-user-first-name">First name*</label>
 
-                            <input type="text" name="user-first-name" id="user-first-name" required>
-                            <label for="user-last-name">Last name*</label>
-                            <input type="text" id="user-last-name" name="user-last-name" required>
+                            <input type="text" name="shipping-user-first-name" id="shipping-user-first-name" required>
+                            <label for="shipping-user-last-name">Last name*</label>
+                            <input type="text" id="shipping-user-last-name" name="shipping-user-last-name" required>
                         </div>
                         <div>
-                            <label for="Country">Country*</label>
-                            <select name="country" id="country" required>
+                            <label for="shipping-country">Country*</label>
+                            <select name="shipping-country" id="shipping-country" required>
+                                <option value="">Choose</option>
                                 <option value="denmark">Denmark</option>
                                 <option value="usa">USA</option>
                                 <option value="sweden">Sweden</option>
@@ -102,10 +105,11 @@
                             </select>
                         </div>
                         <div>
-                            <label for="street-address">Street address*</label>
-                            <input type="text" id="street-address" name="street-address*" required>
-                            <label for="post-code">Post code*</label>
-                            <input type="text" id="post-code" name="post-code" maxlength="4" required>
+                            <label for="shipping-street-address">Street address*</label>
+                            <input type="text" id="shipping-street-address" name="shipping-street-address*" required>
+                            <label for="shipping-post-code">Post code*</label>
+                            <input type="text" id="shipping-post-code" name="shipping-post-code" pattern="[0-9]{4}"
+                                required>
                         </div>
 
                         <!--end of form section shipping-->
@@ -115,13 +119,14 @@
                 </div>
                 <!--start of profile description -->
                 <div class="description">
-                    <label for="profile-description">Profile description <p>Please provide a short description of
-                            yourself to be displayed on our social community pages.</p></label>
+                    <label for="profile-description">Profile description <span class="description-txt">Please provide a
+                            short description of
+                            yourself to be displayed on our social community pages.</span></label>
                     <textarea name="profile-description" id="profile-description" rows="5" maxlength="500"></textarea>
                     <!--end of profile description -->
                 </div>
-                <div class="button"> <button type="submit" id="button">validate</button> <span></span><a href="2.html">
-                        <button type="button" id="button">Next Step</button></a>
+                <div class="button"> <button type="submit" class="btn">validate</button> <span></span><a href="2.html">
+                        <button type="button" class="btn">Next Step</button></a>
                 </div>
                 <!--end form section-->
             </form>

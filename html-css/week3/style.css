@@ -161,11 +161,14 @@ text-align: end;
 form div{
     padding: 2em;
 }
-h1,h2,h3,p{
+h1,h2,h3,p,.description-txt{
     padding-top: 1em;
     padding-bottom: 1em;
 }
-#button{
+.description-txt{
+    font-weight: normal;
+}
+.btn{
     height: 4em;
     width: 10em;
 }

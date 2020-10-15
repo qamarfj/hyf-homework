@@ -29,63 +29,62 @@
                 <div class="progress-container">
                     <div class="progress-page4"></div>
                 </div>
-
-
-                <p>Please fill in your payment data</p>
-
-                <!--form section-->
-                <form>
-                    <!--start of payment-->
-                    <fieldset class="form payment">
-                        <div class="name-on-card">
-                            <label for="name-on-card">Name on card</label>
-                            <input type="text" name="name-on-card" id="name-on-card" autofocus required>
-
-                        </div>
-                        <div class="card-type">
-                            <label for="card-type">Card Type</label>
-                            <select name="card-type" id="card-type" required>
-                                <option value="Visa">Visa Card</option>
-                                <option value="card">Master Card</option>
-                            </select>
-                        </div>
-                        <div class="card-first-name">
-                            <label for="cars-number">Card Number</label>
-                            <input type="tel" id="cars-number" name="cars-number" maxlength="16" pattern="[0-9]{16}"
-                                required>
-                            <label for="first-name">First name</label>
-                            <input type="text" name="first-name" id="first-name" required>
-
-                        </div>
-                        <div class="card-detail-container">
-                            <label for="expiry-month">Expiry month</label>
-                            <input type="text" id="expiry-month" name="expiry-month" maxlength="2" pattern="[0-9]{2}"
-                                required>
-                            <label for="expiry-year">Expiry year</label>
-
-                            <input type="text" id="expiry-year" name="expiry-year" minlength="2" maxlength="4"
-                                pattern="[0-9]*" required>
-                        </div>
-                        <div class="ccv-container">
-                            <label for="ccv">CCV</label>
-
-
-                            <input type="text" id="ccv" name="ccv" minlength="3" maxlength="3" pattern="[0-9]{3}"
-                                required>
-                        </div>
-
-                    </fieldset>
-
-                    <div class="button"> <button type="submit" id="button">validate</button> <span></span><a
-                            href="1.html">
-                            <button type="button" id="button">To Start</button></a>
-                    </div>
-                    <!--end form section-->
-                </form>
-                <!--end of main section-->
             </div>
-            <!--end of main container-->
+
+            <p>Please fill in your payment data</p>
+
+            <!--form section-->
+            <form action="#" method="POST">
+                <!--start of payment-->
+                <fieldset class="form payment">
+                    <div class="name-on-card">
+                        <label for="name-on-card">Name on card</label>
+                        <input type="text" name="name-on-card" id="name-on-card" autofocus required>
+
+                    </div>
+                    <div class="card-type">
+                        <label for="card-type">Card Type</label>
+                        <select name="card-type" id="card-type" required>
+                            <option value="">Choose</option>
+                            <option value="Visa">Visa Card</option>
+                            <option value="card">Master Card</option>
+                        </select>
+                    </div>
+                    <div class="card-first-name">
+                        <label for="cars-number">Card Number</label>
+                        <input type="tel" id="cars-number" name="cars-number" maxlength="16" pattern="[0-9]{16}"
+                            required>
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" id="first-name" required>
+
+                    </div>
+                    <div class="card-detail-container">
+                        <label for="expiry-month">Expiry month</label>
+                        <input type="text" id="expiry-month" name="expiry-month" maxlength="2" pattern="[0-9]{2}"
+                            required>
+                        <label for="expiry-year">Expiry year</label>
+
+                        <input type="text" id="expiry-year" name="expiry-year" minlength="2" maxlength="4"
+                            pattern="[0-9]*" required>
+                    </div>
+                    <div class="ccv-container">
+                        <label for="ccv">CCV</label>
+
+
+                        <input type="text" id="ccv" name="ccv" minlength="3" maxlength="3" pattern="[0-9]{3}" required>
+                    </div>
+
+                </fieldset>
+
+                <div class="button"> <button type="submit" class="btn">validate</button> <span></span><a href="1.html">
+                        <button type="button" class="btn">To Start</button></a>
+                </div>
+                <!--end form section-->
+            </form>
+            <!--end of main section-->
         </div>
+        <!--end of main container-->
+    </div>
 </body>
 
 </html>
