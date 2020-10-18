@@ -1,7 +1,5 @@
 blue
 red
 green
-<<<<<<< HEAD
 black
-=======
->>>>>>> 3bbd9e4ce1933cb3aaa0e8f568fe962a278e0ee1
+
