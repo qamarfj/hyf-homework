@@ -9,12 +9,14 @@ const dogYearOfBirth = 2017;
 let dogYearFuture = 2027;
 const dogYear = 7;
 let shouldShowResultInDogYears = true;//Boolean variable 
-console.log('Your dog will be ' + (dogYearFuture - dogYearOfBirth) +
-    ' human years old in ' + yearFuture + '.');
+if (shouldShowResultInDogYears) {
+    console.log('Your dog will be ' + (dogYearFuture - dogYearOfBirth) +
+        ' human years old in ' + yearFuture + '.');
+}
 
-shouldShowResultInDogYears = false;
-console.log('Your dog will be ' + (dogYearFuture - dogYearOfBirth) *
-    dogYear + ' dog years old in ' + yearFuture + '.');
+else
+    console.log('Your dog will be ' + (dogYearFuture - dogYearOfBirth) *
+        dogYear + ' dog years old in ' + yearFuture + '.');
 
 /*Housey pricey (A house price estimator)*/
 let width;
