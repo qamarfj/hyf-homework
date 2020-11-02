@@ -31,8 +31,12 @@ function estimator() {
     let volumeInMeters = width * depth * height;
     housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
-    if (houseCost >= housePrice) return " too much";
-    else return " too little";
+    if (houseCost > housePrice)
+        return " too much";
+    else if (houseCost === housePrice)
+        return 0;
+    else
+        return " too little";
 }
 /**Peter  */
 width = 8;
@@ -41,8 +45,11 @@ height = 10;
 gardenSizeInM2 = 100;
 houseCost = 2500000;
 estimat = estimator()
-console.log('Peter is paying ' + Math.abs(houseCost - housePrice) +
-    ' ' + estimat);
+if (estimat === 0)
+    console.log('Peter is paying just its actual value ');
+else
+    console.log('Peter is paying ' + Math.abs(houseCost - housePrice) +
+        ' ' + estimat);
 /**Julia  */
 width = 5;
 depth = 11;
@@ -50,17 +57,20 @@ height = 8;
 gardenSizeInM2 = 70;
 houseCost = 1000000;
 estimat = estimator()
-console.log('Julia is paying ' + Math.abs(houseCost - housePrice) + ' '
-    + estimat);
+if (estimat === 0)
+    console.log('Julia is paying just its actual value ');
+else
+    console.log('Julia is paying ' + Math.abs(houseCost - housePrice) + ' '
+        + estimat);
 
 /**Ez Namey (Startup name generator)  */
 const firstWords = ["Crazy", "Lucky", "Fantastic", "Easy", "Awesome",
     "Corporate", "Brilliant", "Two", "White", "Little"];
 const secondWords = ["Leader", "Tech", "Excited", "Solution", "Beautiful",
     "Funcky", "Bully", "Sand", "Heart", "Next"];
-const randomNumber = Math.floor(Math.random() * 10) + 0
-
-let startupName = firstWords[randomNumber] + ' ' + secondWords[randomNumber]
+const randomNumber1 = Math.floor(Math.random() * 10) + 0
+const randomNumber2 = Math.floor(Math.random() * 10) + 0
+let startupName = firstWords[randomNumber1] + ' ' + secondWords[randomNumber2]
 
 console.log("\"The startup: \"" + startupName + "\" contains " +
     startupName.length + " characters\"");
