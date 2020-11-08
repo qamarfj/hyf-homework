@@ -16,17 +16,18 @@ function getFullname(firstname, surname, useFormalName = false) {
 
 }
 
-let fullname1 = getFullname('Benjamin', 'Hughes', true);
-let fullname2 = getFullname('viktor', 'hogu');
+const fullname1 = getFullname('Benjamin', 'Hughes', true);
+const fullname2 = getFullname('viktor', 'hogu');
+const fullname3 = getFullname('viktor', true);
 console.log('Fullname1 : "' + fullname1 + '" ');
 console.log('Fullname2 : "' + fullname2 + '"');
-
+console.log('Fullname3 : "' + fullname3 + '"');
 
 /**Event application */
 function getEventWeekday(noOfDays) {
-    let date = new Date();
-    let todays = date.getDay();
-    let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const date = new Date();
+    const todays = date.getDay();
+    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     return weekDays[(todays + noOfDays % 7) % 7]
 }
 // With todays weekday a tuesday
@@ -91,7 +92,7 @@ function addStudentToClass(studentName) {
         let isAllreadyAdded = false;
         for (let i = 0; i < numberOfStudents; i++) {
 
-            if (class07Students[i].toLowerCase() === studentName.toLowerCase()) {
+            if (class07Students[i].toLowerCase() === studentName.toLowerCase() && studentName.toLowerCase() !== 'queen') {
                 /**if student name found break the loop */
                 isAllreadyAdded = true; break;
             }
@@ -121,13 +122,14 @@ addStudentToClass('student5');
 addStudentToClass('student6');
 addStudentToClass('student7');
 addStudentToClass('queen');
-
+addStudentToClass('queen');
+addStudentToClass('queen');
 console.log(getNumberOfStudents())
 
 /**Candy helper optional */
 let boughtCandyPrices = [];
-let candyTypeList = ['Sweet', 'Chocolate', 'Toffee', 'Chewing-gum']
-let candyPricePerGram = [0.5, 0.7, 1.1, 0.03]
+const candyTypeList = ['Sweet', 'Chocolate', 'Toffee', 'Chewing-gum']
+const candyPricePerGram = [0.5, 0.7, 1.1, 0.03]
 
 function addCandy(candyType, weight) {
     for (let i = 0; i < candyTypeList.length; i++) {
