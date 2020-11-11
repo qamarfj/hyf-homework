@@ -3,7 +3,7 @@
 /**Flight booking fullname function */
 function getFullname(firstname, surname, useFormalName = false) {
     //  are firstname and surname are not empty and there values are not  false or true? 
-    if (arguments.length >= 2 && arguments[1] !== true && arguments[1] !== false) {
+    if (arguments.length >= 2 && typeof (arguments[1]) === 'string') {
         if (useFormalName === true && firstname !== '' && surname !== '')
             return 'Lord ' + firstname + ' ' + surname;
         else if (useFormalName === false && firstname !== '' && surname !== '')
