@@ -1,0 +1,7 @@
+movie 1
+movie 2
+<<<<<<< HEAD
+movie 3 from local
+=======
+movie3
+>>>>>>> c9c1c1b183482d678498ce9c1aa57e1a092f6e3d
