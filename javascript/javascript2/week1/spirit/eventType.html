@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirit animal name generator</title>
+</head>
+
+<body>
+    <fieldset id="options">
+        <legend>Event types:</legend>
+        <div> <label for="option_button">when the user clicks the button</label>
+            <input type="radio" id="option_button" name="eventType"></div>
+        <div>
+            <label for="option_hovers">when the user hovers the input field</label>
+            <input type="radio" id="option_hovers" name="eventType">
+        </div>
+        <div>
+            <label for="option_written">when text is written in the input field</label>
+            <input type="radio" id="option_written" name="eventType"></div>
+    </fieldset>
+    <fieldset>
+        <input type="text" id="userName" placeholder="Enter Name Here">
+        <button id="btnSpiritGenrator">Generate new spirit animal</button>
+    </fieldset>
+    <h1 id="display"></h1>
+    <script src="eventType.js"></script>
+</body>
+
+</html>
