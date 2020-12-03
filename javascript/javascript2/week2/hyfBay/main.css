@@ -1,0 +1,61 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f9fbfd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2 {
+  margin: 0;
+}
+header {
+  height: 5em;
+  text-align: center;
+}
+.display-section {
+  background-color: rgb(203, 206, 204);
+}
+.veiw-control-section {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: #a0aa9d;
+  justify-content: space-around;
+}
+
+/**display container*/
+.products-display {
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid;
+  margin-left: 8em;
+  margin-right: 8em;
+  background-color: rgb(208, 212, 214);
+}
+/* prduct-display is outer li containg ul for each product .prduct-display > ul will taget list of each product to display */
+.prduct-display > ul {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  border: solid 1em;
+
+  border-color: aliceblue;
+  justify-content: space-between;
+  justify-items: center;
+}
+/*will target to each product properties */
+.prduct-display > ul > li {
+  flex: 1 100%;
+  text-align: center;
+  justify-content: space-around;
+  justify-items: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
