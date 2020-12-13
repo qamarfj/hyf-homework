@@ -32,7 +32,9 @@ renderProducts(getSorted(products));
 const searchInputField = document.getElementById("serach-input");
 
 searchInputField.addEventListener("keyup", () =>
-  renderProducts(getSorted(getSearchProductByName(products)))
+const searcherProducts = getSearchProductByName(products);
+const sortedProducts = getSorted();
+ renderProducts(sortedProducts)
 );
 
 // Filter products on name field
