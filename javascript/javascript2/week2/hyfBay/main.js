@@ -26,14 +26,17 @@ function renderProducts(products) {
   });
 }
 // display whole list first time
-renderProducts(getSorted(products));
+const sortedProducts = getSorted(products);
+renderProducts(sortedProducts);
 
 //display products matches to names intered by user
 const searchInputField = document.getElementById("serach-input");
 
-searchInputField.addEventListener("keyup", () =>
-  renderProducts(getSorted(getSearchProductByName(products)))
-);
+searchInputField.addEventListener("keyup", () => {
+  const productsbyName = getSearchProductByName(products);
+  const sortedProducts = getSorted(productsbyName);
+  renderProducts(sortedProducts);
+});
 
 // Filter products on name field
 function getSearchProductByName(products) {
@@ -58,10 +61,14 @@ maxPriceInput.addEventListener("keyup", () => {
   if (maxPrice > 0) {
     //if user entered valid digit
     const productsByMaxPrice = getSearchProductByMaxPrice(products, maxPrice);
-    renderProducts(getSorted(productsByMaxPrice));
+    const sortedProducts = getSorted(productsByMaxPrice);
+    renderProducts(sortedProducts);
   }
   //show all product
-  else renderProducts(getSorted(products));
+  else {
+    const sortedProducts = getSorted(products);
+    renderProducts(sortedProducts);
+  }
 });
 
 //Filter products based on max price

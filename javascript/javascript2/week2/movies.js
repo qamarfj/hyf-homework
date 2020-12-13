@@ -16,12 +16,25 @@ const numberOfMovies = movies.filter(
 console.log(" Movies from 1980 to 1989 : " + numberOfMovies);
 
 //Create a new array that has an extra key called tag. The tag is based on the rating: Good (>= 7), Average (>= 4 and < 7), Bad (< 4)
-const moviesWithTag = movies.filter((movie) => {
+//This is a bit tricky, but you are actually changing the original array! You are also filtering but not returning a boolean
+//will keep this code for reference
+/*const moviesWithTag = movies.filter((movie) => {
   if (movie.rating >= 7) movie.tag = "Good";
   if (movie.rating >= 4 && movie.rating < 7) movie.tag = "Average";
   if (movie.rating < 4) movie.tag = "Bad";
   return movie;
-});
+});*/
+function reducer(accumulator, movie) {
+  const currentmovie = {};
+  Object.assign(currentmovie, movie);
+  if (currentmovie.rating >= 7) currentmovie.tag = "Good";
+  if (currentmovie.rating >= 4 && currentmovie.rating < 7)
+    currentmovie.tag = "Average";
+  if (currentmovie.rating < 4) currentmovie.tag = "Bad";
+  accumulator.push(currentmovie);
+  return accumulator;
+}
+const moviesWithTag = movies.reduce(reducer, []);
 console.log(moviesWithTag);
 
 //Using chaining, first filter the movies array to only contain the movies rated higher than 6. Now map the movies array to only the rating of the movies.
