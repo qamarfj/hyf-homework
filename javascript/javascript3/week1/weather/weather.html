@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF0fMDPRHB_E4AF_DzwPRaC762ux_1cYo&callback=rendermap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" href="weather.css">
+    
+    <title>Weather</title>
+</head>
+<body>
+    <section class="container">
+      <h1 >Weather app</h1>
+      <h3 >Get weather information by city name or your current location!</h3>
+      <div class="control-items">
+        
+    <input type="text" id="city" placeholder="Please Enter City name" class="control" >
+    <div  class="control"><input type="checkbox" id="save-loc" name="save-loc" value="save" checked>
+    <label for="save-loc" class="control"> Want to save Location ?</label></div>
+    <button id="btn-city" class="control">Click here to see weather by  city name</button>
+    <button id="btn-location" class="control">Click here to see weather by current Location</button>
+  </div>
+    <div id="show-list"><ul>
+      <li><h1><span id="loc-city"></span><h1></li>    
+        <li><img id="icon" alt="weather image"></li>
+        <li><h2> <span id="temp-cel"></span> °C</h2></li>
+        <li><h3>Wind <span id="wind-speed"></span> meter/sec</h3></li>
+        <li><h3>Clouds <span id="clouds-per"></span> %</h3></li>
+        <li><h3>Sunrise
+         <span id="sunrise-time"></span> Sunset: <span id="sunset-time"></span></li></h3>
+    </ul></div>
+<div id="map"></div>
+<script src="weather.js"></script>
+</section>
+</body>
+</html>
