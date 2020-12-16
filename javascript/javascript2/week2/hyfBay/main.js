@@ -26,16 +26,32 @@ function renderProducts(products) {
   });
 }
 // display whole list first time
-const sortedProducts = getSorted(products);
-renderProducts(sortedProducts);
-
+function renderAllProducts() {
+  //there is atlest two products
+  if (products.length > 1) {
+    const sortedProducts = getSorted(products);
+    renderProducts(sortedProducts);
+  }
+  //if there is only one product
+  else if (products.length === 1) renderProducts(products);
+  //if there is no product
+  else clearList();
+}
+//display all prodact at page load
+renderAllProducts();
 //display products matches to names intered by user
 const searchInputField = document.getElementById("serach-input");
 
 searchInputField.addEventListener("keyup", () => {
   const productsbyName = getSearchProductByName(products);
-  const sortedProducts = getSorted(productsbyName);
-  renderProducts(sortedProducts);
+  //if atleast two products are in arrray
+  if (productsbyName.length > 1) {
+    const sortedProducts = getSorted(productsbyName);
+    renderProducts(sortedProducts);
+    //if there is only one product
+  } else if (productsbyName.length === 1) renderProducts(productsbyName);
+  //if there is no product
+  else clearList();
 });
 
 // Filter products on name field
@@ -61,13 +77,20 @@ maxPriceInput.addEventListener("keyup", () => {
   if (maxPrice > 0) {
     //if user entered valid digit
     const productsByMaxPrice = getSearchProductByMaxPrice(products, maxPrice);
-    const sortedProducts = getSorted(productsByMaxPrice);
-    renderProducts(sortedProducts);
+    //there is atleast two products
+    if (productsByMaxPrice.length > 1) {
+      const sortedProducts = getSorted(productsByMaxPrice);
+      renderProducts(sortedProducts);
+    }
+    //if there is only one product
+    else if (productsByMaxPrice.length === 1)
+      renderProducts(productsByMaxPrice);
+    //if there is no product
+    else clearList();
   }
   //show all product
   else {
-    const sortedProducts = getSorted(products);
-    renderProducts(sortedProducts);
+    renderAllProducts();
   }
 });
 
@@ -82,9 +105,14 @@ function getSearchProductByMaxPrice(products, maxPrice) {
 //sorting
 //eventlistener for sorting type change
 sortType.addEventListener("change", () => {
-  console.log("change :   " + typeof sortType.selectedIndex);
-  const sortedProduct = getSorted(products);
-  renderProducts(sortedProduct);
+  //atleast there are two products
+  if (products.length > 1) {
+    const sortedProduct = getSorted(products);
+    renderProducts(sortedProduct);
+    //only one product
+  } else if (products.length === 1) renderProducts(products);
+  //there is no product
+  else clearList();
 });
 
 //function for sorting
