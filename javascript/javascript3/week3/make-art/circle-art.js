@@ -31,14 +31,14 @@ function getRandomColor() {
   }
   return color;
 }
-function getRandomvRadius() {
-  const Radius = Math.floor(Math.random() * 600);
+function getRandomRadius() {
+  const Radius = Math.floor(Math.random() * 300);
   return Radius;
 }
 
 //update mouse postion after every mouse move
-let posX;
-let posY;
+let posX=50;
+let posY=50;
 document.addEventListener("mousemove", (e) => {
   posX = e.clientX;
   posY = e.clientY;
@@ -48,9 +48,9 @@ setInterval(() => {
   const circle = new Circle(
     posX,
     posY,
-    getRandomvRadius(),
-    0,
-    2 * Math.PI,
+    getRandomRadius(),
+    startAngle,
+    endAngle,
     getRandomColor()
   );
   circle.draw();

@@ -13,19 +13,19 @@ Promise.all([promise1, promise2, promise3])
     Promise.all([Responses[0].json(), Responses[1].json(), Responses[2].json()])
   )
   .then((repositories) => {
-    repositories.forEach((data) => render(data));
+    repositories.forEach((repository) => render(repository));
   })
   .catch((e) => console.log("errrrrr: ", e));
 // @ts-ignore
 String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
-function render(data) {
+function render(repository) {
   const li = document.createElement("li");
-  li.textContent = data.items[0].owner.login.capitalize() + "'s repositories";
+  li.textContent = repository.items[0].owner.login.capitalize() + "'s repositories";
   container.appendChild(li);
   const ul = document.createElement("ul");
-  for (const respot of data.items) {
+  for (const respot of repository.items) {
     const li = document.createElement("li");
     li.textContent = respot.name + "  : " + respot.html_url;
     ul.appendChild(li);

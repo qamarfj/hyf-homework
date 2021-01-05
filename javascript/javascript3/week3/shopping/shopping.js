@@ -20,8 +20,8 @@ class Product {
     this.price = price;
   }
   convertToCurrency(currency) {
-    for (const curr of currencies) {
-      if (curr.name === currency) return (this.price / curr.price).toFixed(2);
+    for (const currentCurrency of currencies) {
+      if (currentCurrency.name === currency) return (this.price / currentCurrency.price).toFixed(2);
     }
   }
 }
@@ -31,22 +31,19 @@ class ShoppingCart {
     this.products = [];
   }
 
-  addProduct(product) {
-    // Implement functionality here
+  addProduct(product) {    
     //addProduct should add a product to the products array
     this.products.push(product);
   }
 
-  removeProduct(product) {
-    // Implement functionality here
+  removeProduct(product) {    
     //should remove a product from the products array.
     this.products = this.products.filter(
       (cProduct) => cProduct.name !== product.name
     );
   }
 
-  searchProduct(productName) {
-    // Implement functionality here
+  searchProduct(productName) {    
     //should return an array of product that match the productName parameter
     const matchedProducts = this.products.filter(
       (cProduct) => cProduct.name === productName
@@ -54,18 +51,15 @@ class ShoppingCart {
     return matchedProducts;
   }
 
-  getTotal() {
-    // Implement functionality here
+  getTotal() {    
     //should get the total price of the products in the shoppingcart.
     const reducer = (accmulator, cProduct) => accmulator + cProduct.price;
     const total = this.products.reduce(reducer, 0);
     return total;
   }
 
-  renderProducts(userName) {
-    // Implement functionality here
+  renderProducts(userName) {    
     const user = document.querySelector("#user_name");
-
     user.textContent = userName;
     this.products.forEach((product) => {
       const ul = document.createElement("ul");
@@ -95,12 +89,7 @@ class ShoppingCart {
     mainUL.appendChild(li);
   }
 
-  getUser() {
-    // Implement functionality here
-    //should return a promise with the
-    // data from this api: https://jsonplaceholder.typicode.com/users/1
-
-    //   return new Promise((resolve, rejects) => {
+  getUser() {    
     return fetch(" https://jsonplaceholder.typicode.com/users/1")
       .then((response) => response)
       .catch((e) => e);
@@ -122,8 +111,8 @@ shoppingCart
     shoppingCart.renderProducts(user.name);
   })
   .catch((e) => console.log(e));
-// Assuming dkr as default currency
-//Part 3
+  
+//Part 3 Assuming dkk as default currency
 const plant = new Product("plant", 50);
 currencies.forEach((currency) => {
   console.log(
