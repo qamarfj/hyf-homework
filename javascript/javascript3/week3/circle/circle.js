@@ -1,5 +1,5 @@
-const c = document.getElementById("myCanvas");
-const ctx = c.getContext("2d");
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
 
 class Circle {
   constructor(x, y, r, startAngle, endAngle, fillColor) {
