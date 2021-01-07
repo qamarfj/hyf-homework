@@ -3,19 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" href="shopping.png">
    <link rel="stylesheet" href="style.css">
     <title>Shopping app </title>
 </head>
 <body>
-
-    <div id="main">
+    <div id="main">    
+        <div>
+            <div class="autocomplete" id="search_container" style="width:300px;">
+             <input id="search_Input" type="text" placeholder="Search Product">
+            </div>
+        </div>
+       
+        <!-- The Modal -->
+        <div id="my-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h3>Product Detial</h3>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-text">Oops! No Product Found!</p>
+                </div>            
+              </div>
+           
+        </div>  
         <h3 id="user_name"></h3>
-        <ul id="container">
-        
-        </ul>
-    </ul>
+        <ul id="container"> </ul>
+    
     </div>
+
     <script src="shopping.js"></script>
+   
 </body>
 </html>
