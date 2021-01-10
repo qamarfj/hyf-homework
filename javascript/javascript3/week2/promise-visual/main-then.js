@@ -31,6 +31,24 @@
       })
       .catch((error) => console.log(error));
   }
+  /**
+   *z zuhairtaha commented, You can also return a promise for each box and continue chaining. Similar to this
+   * function translateOneByOne() {
+  moveElement(red, target.red)
+    .then(() => {
+      console.log('red moved');
+      return moveElement(blue, target.blue);
+    })
+    .then(() => {
+      console.log('blue moved');
+      return moveElement(green, target.green);
+    })
+    .then(() => {
+      console.log('green moved');
+      return;
+    });
+// ...
+} */
   translateOneByOne();
   //translateAllAtOnce();
   function translateAllAtOnce() {
