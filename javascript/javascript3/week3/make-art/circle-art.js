@@ -1,7 +1,7 @@
-const myCanvas = document.getElementById("myCanvas");
-myCanvas.width = window.innerWidth;
-myCanvas.height = window.innerHeight;
-const ctx = myCanvas.getContext("2d");
+const artCanvas = document.getElementById("art-canvas");
+artCanvas.width = window.innerWidth;
+artCanvas.height = window.innerHeight;
+const context = artCanvas.getContext("2d");
 const startAngle = 0;
 const endAngle = 2 * Math.PI;
 //class
@@ -15,11 +15,11 @@ class Circle {
     this.fillColor = fillColor;
   }
   draw() {
-    ctx.fillStyle = this.fillColor;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, this.startAngle, this.endAngle);
-    ctx.closePath();
-    ctx.fill();
+    context.fillStyle = this.fillColor;
+    context.beginPath();
+    context.arc(this.x, this.y, this.r, this.startAngle, this.endAngle);
+    context.closePath();
+    context.fill();
   }
 }
 // ranodm color genrator
@@ -37,8 +37,8 @@ function getRandomRadius() {
 }
 
 //update mouse postion after every mouse move
-let posX=50;
-let posY=50;
+let posX = 50;
+let posY = 50;
 document.addEventListener("mousemove", (e) => {
   posX = e.clientX;
   posY = e.clientY;
