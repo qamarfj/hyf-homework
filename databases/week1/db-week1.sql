@@ -1,4 +1,4 @@
-/*Find out how many tasks are in the task table*/
+--Find out how many tasks are in the task table
 SELECT 
     COUNT(*) as 'Total Task'
 FROM
@@ -76,7 +76,6 @@ FROM
     task t ON s.id = t.status_id
 GROUP BY name
 ORDER BY COUNT(*) DESC;
-
 
 
 
