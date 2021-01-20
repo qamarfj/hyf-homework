@@ -48,8 +48,8 @@ SELECT
 FROM
     task
 WHERE
-    title REGEXP 'database'
-        OR description REGEXP 'database';
+    title LIKE '%database%'
+        OR description like '%database%';
 
 /*Get the title and status (as text) of all tasks*/
 SELECT 
@@ -76,7 +76,6 @@ FROM
     task t ON s.id = t.status_id
 GROUP BY name
 ORDER BY COUNT(*) DESC;
-
 
 
 
