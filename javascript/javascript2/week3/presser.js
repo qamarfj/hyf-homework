@@ -7,14 +7,19 @@ const displayWiner = document.querySelector("#display-winer");
 const displayScount = document.querySelector("#display-scount");
 const displayLcount = document.querySelector("#display-lcount");
 const displayError = document.querySelector("#display-error");
+const countDownField = document.getElementById("count-down");
 let sCount = 0;
 let lCount = 0;
-let timerId;
+let timerId, countDown;
 const startGame = () => {
   sCount = 0;
   lCount = 0;
+  countDown = parseInt(timer.value);
   btnStartGame.innerHTML = "Start Game Again";
-
+  //make game start , reset buttons and input disable
+  timer.readOnly = true;
+  btnStartGame.disabled = true;
+  btnResetGame.disabled = true;
   const stopGameLimit = parseInt(timer.value);
   if (stopGameLimit > 0) {
     //at start stage reset all display items
@@ -22,14 +27,25 @@ const startGame = () => {
     displayLcount.innerHTML = "";
     displayScount.innerHTML = "";
     displayWiner.innerHTML = "";
+
+    const countDownIntravell = setInterval(() => {
+      countDown--;
+      countDownField.textContent = countDown;
+    }, 1000);
+
     //at the end of time stop keypressed event listening  and call display result
+
     timerId = setTimeout(() => {
+      clearInterval(countDownIntravell);
       document.removeEventListener("keypress", checkKey);
       showWiner();
       console.log("time is up");
     }, stopGameLimit * 1000);
     //display resulet
     function showWiner() {
+      //enable rest button and input again
+      btnResetGame.disabled = false;
+
       if (sCount > lCount) displayWiner.innerHTML = "🎉S🎉 is the Winer";
       else if (lCount > sCount) displayWiner.innerHTML = "🎉L🎉 is the Winer";
       else if (lCount === 0 && sCount === 0)
@@ -49,6 +65,8 @@ const startGame = () => {
     //start listening keypress event
     document.addEventListener("keypress", checkKey);
   } else {
+    //reset button enable again
+    btnResetGame.disabled = false;
     displayError.innerHTML = "OOPS! Please Set Valid Timer";
     displayLcount.innerHTML = "";
     displayScount.innerHTML = "";
@@ -64,6 +82,9 @@ function reset() {
   sCount = 0;
   lCount = 0;
   timer.value = "";
+  //enable input and start game button
+  timer.readOnly = false;
+  btnStartGame.disabled = false;
 
   displayError.innerHTML = "";
   displayLcount.innerHTML = "";

@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="presser.css">
     <title>Presser</title>
 </head>
-<body><header><h1>Fastest Presser </h1></header>
+
+<body>
+    <header>
+        <h1>Fastest Presser </h1>
+    </header>
+    <h3 id="count-down"></h3>
     <section class="input">
-    <input type="number" id='time-input' placeholder="Set Timer!">
-    <button id="start-game">Start Game</button>
-    <button id="reset-game">Reset Game</button>
-</section>
-<section class="anous-winner">
-    <h1 id="display-winer"></h1>
-    <h1 id="display-error"></h1></section>
+        <input type="number" id='time-input' placeholder="Set Timer!">
+        <button id="start-game">Start Game</button>
+        <button id="reset-game">Reset Game</button>
+    </section>
+    <section class="anous-winner">
+        <h1 id="display-winer"></h1>
+        <h1 id="display-error"></h1>
+    </section>
     <section class="display-keys">
-    <div class="scount"><h1>Press S</h1><h3 id="display-scount"></h3></div>
-<div class="lcount"><h1>Press L</h1><h3 id="display-lcount"></h3></div></section>
+        <div class="scount">
+            <h1>Press S</h1>
+            <h3 id="display-scount"></h3>
+        </div>
+        <div class="lcount">
+            <h1>Press L</h1>
+            <h3 id="display-lcount"></h3>
+        </div>
+    </section>
     <script src="presser.js"></script>
 </body>
+
 </html>

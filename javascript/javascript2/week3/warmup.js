@@ -83,7 +83,7 @@ const logDoubleClick = () => {
   numberOfclick++;
   function logIfDouble() {
     if (numberOfclick > 1) {
-      numberOfclic = 0;
+      numberOfclick = 0;
       console.log("double click!");
     } else numberOfclick = 0;
   }
