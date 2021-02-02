@@ -1,0 +1,12 @@
+#container > li {
+  font-weight: bold;
+  color: rgb(223, 219, 219);
+}
+li {
+  margin: 1em;
+  font-size: large;
+}
+body {
+  color: rgb(234, 238, 235);
+  background-color: rgb(60, 60, 63);
+}
