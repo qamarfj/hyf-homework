@@ -6,7 +6,9 @@ const reviewsjson = require("./data/reviews.json");
 module.exports = {
   // return all the meals (including it's reviews)
   getAllMealsIncludedReiews: () => {
-    const allMealsIncludedReiews = meals.map((meal) => {
+    //create a deep copy of Meals before including reviews in it.
+    const allMeals = JSON.parse(JSON.stringify(meals));
+    const allMealsIncludedReiews = allMeals.map((meal) => {
       meal.reviews = [];
       reviewsjson.forEach((review) => {
         if (review.mealId === meal.id) {
@@ -20,7 +22,9 @@ module.exports = {
   /**return all the meals (including it's reviews)
    *  that are cheap (you define what a cheap meal is) */
   getAllCheapMealsIncludedReiews: () => {
-    const allCheapMealsIncludedReiews = meals
+    //create a deep copy of Meals before including reviews in it.
+    const allMeals = JSON.parse(JSON.stringify(meals));
+    const allCheapMealsIncludedReiews = allMeals
       .filter((currentMeal) => currentMeal.price < 69)
       .map((meal) => {
         meal.reviews = [];
@@ -36,7 +40,9 @@ module.exports = {
   /**return all the meals
    *  (including it's reviews) that can fit lots of people */
   getAllLargeMealsIncludedReiews: () => {
-    const allLargeMealsIncludedReiews = meals
+    //create a deep copy of Meals before including reviews in it.
+    const allMeals = JSON.parse(JSON.stringify(meals));
+    const allLargeMealsIncludedReiews = allMeals
       .filter((currentMeal) => currentMeal.maxNumberOfGuests > 10)
       .map((meal) => {
         meal.reviews = [];
@@ -52,7 +58,8 @@ module.exports = {
   /**retun a random meal (including it's reviews) */
   getRandomMealIncludedReiews: () => {
     const randomIndex = Math.floor(Math.random() * meals.length);
-    const randomMeal = meals[randomIndex];
+    //create a deep copy of Meal before including reviews in it.
+    const randomMeal = JSON.parse(JSON.stringify(meals[randomIndex]));
 
     randomMeal.reviews = [];
     reviewsjson.forEach((review) => {
