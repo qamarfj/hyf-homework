@@ -8,18 +8,19 @@ class Product {
   async convertToCurrency(currency) {
     let isCurrencyFound = false;
     let price;
-    await fetch("https://api.exchangeratesapi.io/latest?base=DKK")
-      .then((promise) => promise.json())
-      .then((data) => {
-        for (let key in data.rates) {
-          if (key == currency) {
-            const currentrate = data.rates[key];
-            price = this.price * currentrate;
-            isCurrencyFound = true;
-          }
-        }
-      })
-      .catch((e) => console.log(e));
+
+    const promise = await fetch(
+      "https://api.exchangeratesapi.io/latest?base=DKK"
+    );
+    const data = await promise.json();
+
+    for (let key in data.rates) {
+      if (key == currency) {
+        const currentrate = data.rates[key];
+        price = this.price * currentrate;
+        isCurrencyFound = true;
+      }
+    }
     if (isCurrencyFound) return price;
     else return "Currency not found :";
   }
@@ -88,10 +89,12 @@ class ShoppingCart {
     mainUL.appendChild(li);
   }
 
-  getUser() {
-    return fetch(" https://jsonplaceholder.typicode.com/users/1")
-      .then((response) => response)
-      .catch((e) => e);
+  async getUser() {
+    const response = await fetch(
+      " https://jsonplaceholder.typicode.com/users/1"
+    );
+    const user = await response.json();
+    return user.name;
   }
 }
 //Part 2 create instance of ShoppingCart
@@ -111,28 +114,30 @@ shoppingCart.addProduct(iphone);
 shoppingCart.addProduct(glaxy);
 shoppingCart.addProduct(camra);
 //get user name then render products from shopping cart
-shoppingCart
-  .getUser()
-  .then((response) => response.json())
-  .then((user) => {
-    shoppingCart.renderProducts(user.name);
-  })
-  .catch((e) => console.log(e));
+async function renderProductsWithUserName() {
+  const userName = await shoppingCart.getUser();
+  shoppingCart.renderProducts(userName);
+}
+renderProductsWithUserName();
 
 //Part 3 Assuming dkk as default currency
-const plant = new Product("plant", 50);
-const currencyName = "GBP";
-plant
-  .convertToCurrency(currencyName)
-  .then((price) =>
-    console.log(`${plant.name}'s price in ${currencyName} is : ${price}`)
+
+async function priceInOtherCurrency() {
+  const plant = new Product("plant", 50);
+  //price in GBP
+  const currencyName = "GBP";
+  const price = await plant.convertToCurrency(currencyName);
+  console.log(`${plant.name}'s price in ${currencyName} is : ${price}`);
+  //test with none existence currency
+  const wrongCurrencyName = "Wrong Currency";
+  const priceWithWrongCurrencyName = await plant.convertToCurrency(
+    wrongCurrencyName
   );
-const wrongCurrencyName = "Wrong Currency";
-plant
-  .convertToCurrency(wrongCurrencyName)
-  .then((price) =>
-    console.log(`${plant.name}'s price in ${wrongCurrencyName} is : ${price}`)
+  console.log(
+    `${plant.name}'s price in ${wrongCurrencyName} is : ${priceWithWrongCurrencyName}`
   );
+}
+priceInOtherCurrency();
 //Part 2  searchbar where a user can search for a product. Matching product are shown as an autocomplete.
 /*the autocomplete function takes two arguments, search input text field and availble products*/
 function autocomplete(searchField, availableProducts) {
