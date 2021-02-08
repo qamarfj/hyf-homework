@@ -8,13 +8,8 @@ module.exports = {
     return reservations;
   },
   getReservations: (id) => {
-    let foundedReservation;
-    reservations.forEach((reservation) => {
-      if (reservation.id === id) {
-        foundedReservation = reservation;
-      }
-    });
-    if (foundedReservation) return foundedReservation;
-    else return false;
+   const reservation=
+    reservations.filter((reservation) =>  (reservation.id === id));
+    return reservation[0];
   },
 };

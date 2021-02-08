@@ -8,13 +8,9 @@ module.exports = {
     return reviews;
   },
   getReviews: (id) => {
-    let foundedRview;
-    reviews.forEach((review) => {
-      if (review.id === id) {
-        foundedRview = review;
-      }
-    });
-    if (foundedRview) return foundedRview;
-    else return false;
+    const review= reviews.filter((review) => review.id === id );
+	   
+  return review[0];
+    
   },
 };

@@ -12,7 +12,7 @@ const allMealsIncludedReiews = allMeals.map((meal) => {
 });
 
 module.exports = {
-  // return all the meals (including it's reviews)
+  // return all the meals matching parameters (including it's reviews)
   getAllMealsIncludedReiews: (parameters) => {
     let maxPrice = parseInt(parameters.maxPrice);
     let title = parameters.title;
@@ -31,9 +31,9 @@ module.exports = {
         meal.title.includes(title) &&
         Date.parse(meal.createdAt) > createdAfter
     );
-    const limitedMeals = filteredMeals.filter((meal, i) => i < limit - 1);
+    const MealsByLimit = filteredMeals.filter((meal, i) => i < limit - 1);
 
-    return limitedMeals;
+    return MealsByLimit;
   },
   // meals by id
   getMealsIncludedReiews: (mealId) => {
