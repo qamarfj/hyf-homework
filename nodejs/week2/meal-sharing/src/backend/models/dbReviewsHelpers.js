@@ -8,9 +8,8 @@ module.exports = {
     return reviews;
   },
   getReviews: (id) => {
-    const review= reviews.filter((review) => review.id === id );
-	   
-  return review[0];
-    
+    const review = reviews.find((review) => review.id === id);
+
+    return review;
   },
 };

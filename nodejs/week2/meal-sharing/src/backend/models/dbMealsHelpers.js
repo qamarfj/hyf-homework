@@ -37,9 +37,9 @@ module.exports = {
   },
   // meals by id
   getMealsIncludedReiews: (mealId) => {
-    const mealById = allMealsIncludedReiews.filter(
+    const mealById = allMealsIncludedReiews.find(
       (currentMeal) => currentMeal.id === mealId
     );
-    return mealById[0];
+    return mealById;
   },
 };

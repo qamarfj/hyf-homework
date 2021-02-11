@@ -8,8 +8,9 @@ module.exports = {
     return reservations;
   },
   getReservations: (id) => {
-   const reservation=
-    reservations.filter((reservation) =>  (reservation.id === id));
-    return reservation[0];
+    const reservation = reservations.find(
+      (reservation) => reservation.id === id
+    );
+    return reservation;
   },
 };
