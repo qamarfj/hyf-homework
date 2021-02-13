@@ -24,16 +24,17 @@ module.exports = {
     createdAfter = isNaN(createdAfter)
       ? Date.parse("1900-01-01")
       : createdAfter;
-    limit = limit > 0 ? limit : Number.POSITIVE_INFINITY;
-    const filteredMeals = allMealsIncludedReiews.filter(
-      (meal) =>
-        meal.price < maxPrice &&
-        meal.title.includes(title) &&
-        Date.parse(meal.createdAt) > createdAfter
-    );
-    const MealsByLimit = filteredMeals.filter((meal, i) => i < limit - 1);
+    limit = limit >= 0 ? limit : Number.POSITIVE_INFINITY;
+    const filteredMeals = allMealsIncludedReiews
+      .filter(
+        (meal) =>
+          meal.price < maxPrice &&
+          meal.title.includes(title) &&
+          Date.parse(meal.createdAt) > createdAfter
+      )
+      .slice(0, limit);
 
-    return MealsByLimit;
+    return filteredMeals;
   },
   // meals by id
   getMealsIncludedReiews: (mealId) => {
