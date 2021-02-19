@@ -7,7 +7,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => res.send("nodejs week3 homework warmup"));
+/*
+Getting data through query parameters using GET
+Going to localhost:300/calculator/add?firstParam=1&secondParam=2&secondParam=4 should respond with 7.
+Going to localhost:300/calculator/subtract?firstParam=2&secondParam=1&secondParam=4 should respond with 1.
+Going to localhost:300/calculator/multiply?firstParam=1&secondParam=2 should respond with 2.
+Going to localhost:300/calculator/multiply?firstParam=1&secondParam=2&secondParam=4 should respond with 8.
+Going to localhost:300/calculator/division?firstParam=4&secondParam=2&secondParam=4 should respond with 2.
 
+*/
 app.get("/calculator/add", async (req, res) => {
   try {
     const numbers = req.query;
@@ -53,6 +61,11 @@ app.get("/calculator/division", async (req, res) => {
   }
 });
 
+/**Getting data through the request body using POST
+Going to localhost:300/calculator/add with the following key values: firstParam=1, secondParam=2. Should respond with 3.
+Going to localhost:300/calculator/subtract with the following key values: firstParam=2, secondParam=1. Should respond with 1. 
+Going to localhost:300/calculator/multiply with the following key values: firstParam=1, secondParam=2. Should respond with 2.
+Going to localhost:300/calculator/division with the following key values: firstParam=1, secondParam=2. Should respond with 0.5.*/
 app.post("/calculator/add", async (req, res) => {
   try {
     const numbers = req.body;
