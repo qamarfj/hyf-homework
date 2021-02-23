@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ToDo = ({ title, deadLine }) => {
+export const Todo = ({ title, deadLine }) => {
   return (
     <li>
       <h3> {title}</h3>
