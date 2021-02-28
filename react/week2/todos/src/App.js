@@ -1,5 +1,6 @@
 import "./App.css";
 import { Timer } from "./Timer";
+import { todos } from "./todos";
 
 function App() {
   return (
