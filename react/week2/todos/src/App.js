@@ -13,7 +13,7 @@ function App() {
       {
         id: Math.floor(Math.random() * 1000),
         description: "random Texet",
-        done: false,
+        isDone: false,
       },
     ]);
   }
@@ -25,7 +25,7 @@ function App() {
     const todos = [...currentTodos];
     setCurrentTodos(
       todos.map((todo) => {
-        if (todo.id === id) todo.done = !todo.done;
+        if (todo.id === id) todo.isDone = !todo.isDone;
         return todo;
       })
     );

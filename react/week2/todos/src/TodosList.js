@@ -1,10 +1,10 @@
 function TodoItem({ todo, DeleteTodo, toggleDone }) {
   return (
-    <li className={todo.done ? "done" : "notdone"}>
+    <li className={todo.isDone ? "Done" : "notDone"}>
       {todo.description}
       <input
         type="checkbox"
-        checked={todo.done}
+        checked={todo.isDone}
         onChange={() => toggleDone(todo.id)}
       />
       <button onClick={() => DeleteTodo(todo.id)}>Delete</button>

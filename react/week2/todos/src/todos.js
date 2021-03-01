@@ -2,16 +2,16 @@ export const todos = [
   {
     id: 1,
     description: "Get out of bed",
-    done: false,
+    isDone: false,
   },
   {
     id: 2,
     description: "Brush teeth",
-    done: false,
+    isDone: false,
   },
   {
     id: 3,
     description: "Eat breakfast",
-    done: false,
+    isDone: false,
   },
 ];
