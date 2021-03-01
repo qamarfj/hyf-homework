@@ -13,12 +13,22 @@ function App() {
       {
         id: Math.floor(Math.random() * 1000),
         description: "random Texet",
+        done: false,
       },
     ]);
   }
   const DeleteTodo = (id) => {
     const todos = [...currentTodos];
-    setCurrentTodos(todos.filter((todo) => todo.id != id));
+    setCurrentTodos(todos.filter((todo) => todo.id !== id));
+  };
+  const toggleDone = (id) => {
+    const todos = [...currentTodos];
+    setCurrentTodos(
+      todos.map((todo) => {
+        if (todo.id === id) todo.done = !todo.done;
+        return todo;
+      })
+    );
   };
   return (
     <div className="App">
@@ -27,7 +37,11 @@ function App() {
       </header>
       <Timer />
       <button onClick={AddTodo}>Add Todo</button>
-      <TodosList todos={currentTodos} DeleteTodo={DeleteTodo} />
+      <TodosList
+        todos={currentTodos}
+        DeleteTodo={DeleteTodo}
+        toggleDone={toggleDone}
+      />
     </div>
   );
 }
