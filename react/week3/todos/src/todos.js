@@ -1,5 +1,6 @@
 import TodosList from "./TodosList";
 import { useEffect, useState } from "react";
+import { default as UUID } from "node-uuid";
 const URL =
   "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
 
@@ -27,14 +28,14 @@ export default function Todos() {
   }, []);
 
   function AddTodo(e) {
-    setCurrentTodos((prev) => [
-      ...prev,
-      {
-        id: currentTodos.length + 1,
-        description: description,
-        deadline: deadline,
-      },
-    ]);
+    const currentTodo = {
+      id: UUID.v4(),
+      description: description,
+      deadline: deadline,
+    };
+    console.log(currentTodo.id);
+    setCurrentTodos((prev) => [...prev, currentTodo]);
+
     setDescription("");
     setDeadline("");
 
