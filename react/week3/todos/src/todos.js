@@ -27,22 +27,17 @@ export default function Todos() {
   }, []);
 
   function AddTodo(e) {
-    const isValidDate = Date.parse(deadline) >= Date.now();
-    if (!isValidDate) {
-      console.log("not valid date");
-    }
-    if (description !== "" && isValidDate) {
-      setCurrentTodos((prev) => [
-        ...prev,
-        {
-          id: currentTodos.length + 1,
-          description: description,
-          deadline: deadline,
-        },
-      ]);
-      setDescription("");
-      setDeadline("");
-    }
+    setCurrentTodos((prev) => [
+      ...prev,
+      {
+        id: currentTodos.length + 1,
+        description: description,
+        deadline: deadline,
+      },
+    ]);
+    setDescription("");
+    setDeadline("");
+
     e.preventDefault();
   }
   const DeleteTodo = (id) => {

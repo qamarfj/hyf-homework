@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import React, { useState } from "react";
+import Border from "./Border";
 function TodoItem({ todo, DeleteTodo, UpdateTodo }) {
   const [isCheked, setIsCheked] = useState(false);
   const [isUpdated, setIsUpdated] = useState(true);
@@ -55,12 +55,13 @@ export default function TodosList({ todos, DeleteTodo, UpdateTodo }) {
       {todos.length > 0 && (
         <ul>
           {todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              DeleteTodo={DeleteTodo}
-              UpdateTodo={UpdateTodo}
-            />
+            <Border key={todo.id}>
+              <TodoItem
+                todo={todo}
+                DeleteTodo={DeleteTodo}
+                UpdateTodo={UpdateTodo}
+              />
+            </Border>
           ))}
         </ul>
       )}
