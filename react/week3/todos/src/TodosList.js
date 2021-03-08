@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Border from "./Border";
+import PropTypes from "prop-types";
+
 function TodoItem({ todo, DeleteTodo, UpdateTodo }) {
   const [isCheked, setIsCheked] = useState(false);
   const [isUpdated, setIsUpdated] = useState(true);
@@ -69,3 +71,9 @@ export default function TodosList({ todos, DeleteTodo, UpdateTodo }) {
     </>
   );
 }
+
+TodoItem.propTypes = {
+  todo: PropTypes.object,
+  DeleteTodo: PropTypes.func,
+  UpdateTodo: PropTypes.func,
+};
