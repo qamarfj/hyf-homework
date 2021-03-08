@@ -33,7 +33,6 @@ export default function Todos() {
       description: description,
       deadline: deadline,
     };
-    console.log(currentTodo.id);
     setCurrentTodos((prev) => [...prev, currentTodo]);
 
     setDescription("");
