@@ -10,7 +10,7 @@ function TodoItem({ todo, DeleteTodo, UpdateTodo }) {
     settodoDescription(e.target.value);
   };
   return (
-    <li className={isCheked ? "Done" : "notDone"}>
+    <li className={isCheked ? "Done" : ""}>
       {isUpdated && (
         <>
           {todo.description} | {todo.deadline}
@@ -73,7 +73,11 @@ export default function TodosList({ todos, DeleteTodo, UpdateTodo }) {
 }
 
 TodoItem.propTypes = {
-  todo: PropTypes.object,
+  todo: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    description: PropTypes.string,
+    deadline: PropTypes.string,
+  }),
   DeleteTodo: PropTypes.func,
   UpdateTodo: PropTypes.func,
 };

@@ -1,3 +1,3 @@
 export default function Border(props) {
-  return <div className="border">{props.children}</div>;
+  return <div className="Border">{props.children}</div>;
 }
