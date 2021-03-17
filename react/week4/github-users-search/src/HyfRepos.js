@@ -15,7 +15,7 @@ export default function HyfRepos() {
       }
     };
     fetchHyfRepos();
-  });
+  }, []);
 
   return (
     <div>
