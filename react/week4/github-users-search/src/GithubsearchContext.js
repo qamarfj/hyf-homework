@@ -1,20 +1,27 @@
 import React, { useEffect, useState, createContext, useContext } from "react";
 const API_URL = "https://api.github.com/search/users?q=";
-// @ts-ignore
-export const GithubContext = React.createContext();
+export const GithubContext = createContext();
 
 export default function GithubsearchContext({ children }) {
   const [isLoloading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   const [query, setQuery] = useState("");
   const [users, setUsers] = useState([]);
+  const [app, setApp] = useState("usersSearch");
+  const [repos, setRepos] = useState([]);
   const contextValue = {
-    isLoloading: isLoloading,
-    error: error,
-    query: query,
-    users: users,
-    TextChange: (e) => {
+    isLoloading,
+    error,
+    query,
+    users,
+    app,
+    repos,
+    setRepos,
+    queryChange: (e) => {
       setQuery(e.target.value);
+    },
+    appSet: (e) => {
+      setApp(e.target.value);
     },
   };
   useEffect(() => {

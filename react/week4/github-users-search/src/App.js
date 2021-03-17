@@ -1,13 +1,24 @@
 import "./App.css";
 import GithubUsers from "./GithubUsers";
-import GithubsearchContext from "./GithubsearchContext";
+import { UseGithub } from "./GithubsearchContext";
+import React from "react";
+import HyfRepos from "./HyfRepos";
+
 function App() {
+  const context = UseGithub();
   return (
     <div className="App App-header">
-      <h1>Github user searcher</h1>
-      <GithubsearchContext>
-        <GithubUsers />
-      </GithubsearchContext>
+      <div>
+        <button value="usersSearch" onClick={context.appSet}>
+          Users Search
+        </button>
+        <button value="hyfRepos" onClick={context.appSet}>
+          HackYourFuture-CPH Repos
+        </button>
+      </div>
+
+      {context.app === "usersSearch" && <GithubUsers />}
+      {context.app === "hyfRepos" && <HyfRepos />}
     </div>
   );
 }
