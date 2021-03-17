@@ -1,12 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext, useContext } from "react";
 const API_URL = "https://api.github.com/search/users?q=";
+// @ts-ignore
+export const GithubContext = React.createContext();
 
-export default function GithubsearchContext() {
+export default function GithubsearchContext({ children }) {
   const [isLoloading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   const [query, setQuery] = useState("");
   const [users, setUsers] = useState([]);
-
+  const contextValue = {
+    isLoloading: isLoloading,
+    error: error,
+    query: query,
+    users: users,
+    TextChange: (e) => {
+      setQuery(e.target.value);
+    },
+  };
   useEffect(() => {
     async function fetchGithub() {
       if (query !== "") {
@@ -28,25 +38,12 @@ export default function GithubsearchContext() {
   }, [query]);
 
   return (
-    <>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-        }}
-      />
-      {!error && isLoloading && <div>Loading....</div>}
-      {!error && users !== undefined && users.length > 0 ? (
-        <div>
-          {users.map((user) => {
-            return <div>{user.login}</div>;
-          })}
-        </div>
-      ) : (
-        <div>No Item</div>
-      )}
-      {error && <div>{error}</div>}
-    </>
+    <GithubContext.Provider value={contextValue}>
+      {children}
+    </GithubContext.Provider>
   );
+}
+export function UseGithub() {
+  const context = useContext(GithubContext);
+  return context;
 }
