@@ -50,7 +50,7 @@ export default function GithubsearchContext({ children }) {
     </GithubContext.Provider>
   );
 }
-export function UseGithub() {
+export function useGithub() {
   const context = useContext(GithubContext);
   return context;
 }
