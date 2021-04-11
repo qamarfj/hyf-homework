@@ -6,3 +6,7 @@ Tomato
  corn
  cucumber
  
+ eggplant
+ asparagus
+ cauliflower
+ 
