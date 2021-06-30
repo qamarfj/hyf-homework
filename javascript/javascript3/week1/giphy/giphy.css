@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: lightgrey;
+}
+h1 {
+  font-family: Brush Script MT, Lucida Handwriting, Segoe Print;
+  font-weight: bold;
+  font-size: 5em;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(201, 197, 197);
+  width: 100%;
+  text-align: center;
+  color: blue;
+}
+input {
+  font-size: large;
+  text-align: center;
+  height: 3em;
+  width: 28em;
+  margin: 1em;
+}
+button {
+  border-color: blue;
+  font-size: large;
+  color: white;
+  background-color: cornflowerblue;
+  height: 3em;
+  width: 15em;
+  margin: 1em;
+}
+button:hover {
+  background-color: blue;
+}
+button:active {
+  background-color: rgb(19, 110, 141);
+}
+ul {
+  list-style: none;
+}

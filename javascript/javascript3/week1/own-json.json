@@ -1,0 +1,32 @@
+{"history_of_computing_hardware":[
+    {   "id":1,
+        "generation": "First generation (mechanical/electromechanical",
+        "devices": ["Calculators", "Programmable devices"]       
+    },
+    
+    {   "id":2,
+        "generation": "Second generation (vacuum tubes)",
+        "devices": [ "Calculators",  "Programmable devices"]
+    },
+    {   "id":3,
+        "generation": "Third generation (discrete transistors and SSI, MSI, LSI integrated circuits)",
+        "devices": ["Mainframes", "Minicomputer","Desktop Computer"]
+    },
+    {   "id":4,
+        "generation": "Fourth generation (VLSI integrated circuits)",
+        "devices": [
+            "Minicomputer",
+            "4-bit microcomputer",
+            "8-bit microcomputer",
+            "16-bit microcomputer",
+            "32-bit microcomputer",
+            "64-bit microcomputer",
+            "Embedded computer",
+            "Personal computer"
+
+        ]
+    }
+]
+}
+      
+

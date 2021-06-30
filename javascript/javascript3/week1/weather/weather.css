@@ -1,0 +1,42 @@
+/* Optional: Makes the sample page fill the window. */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(96, 90, 131);
+  color: azure;
+  background-image: url("weather.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.control-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.control {
+  margin: 1%;
+  font-weight: bold;
+  width: 50%;
+  /*min-height: 1em;
+  min-width: 50%;*/
+}
+/* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+#map {
+  min-height: 50vh;
+  min-width: 50vw;
+}
+
+ul {
+  list-style-type: none;
+}
